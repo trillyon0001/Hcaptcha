@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hCaptcha Challenge</title>
+  <script src="https://hcaptcha.com/1/api.js" async defer></script>
+</head>
+<body>
+  <div id="hcaptcha-container"></div>
+  <script>
+    window.onload = function() {
+      const sitekey = '55159327-40d2-4fdb-b5c7-aeefe3139ceb';
+      const container = document.getElementById('hcaptcha-container');
+      const hcaptcha = window.hcaptcha.render(container, {
+        sitekey: sitekey,
+        callback: function(token) {
+          console.log('hCaptcha token:', token);
+          // You can handle the token here
+        }
+      });
+    };
+  </script>
+</body>
+</html>
